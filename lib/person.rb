@@ -1,4 +1,3 @@
-# your code goes here
 
 class Person
 
@@ -47,25 +46,27 @@ class Person
     end
 
     def call_friend(buddy)
-        puts "Hi #{buddy}! It's #{self.name}. How are you?"
+        self.happiness += 3
+        buddy.happiness += 3
+        puts "Hi #{buddy.name}! It's #{self.name}. How are you?"
     end 
     
-    
+    def start_conversation(friend, topic)
+        if topic == "politics"
+            self.happiness -= 2
+            friend.happiness -= 2
+            puts "blah blah partisan blah lobbyist"
+        elseif topic == "food"
+            self.happiness += 2
+            friend.happiness += 2
+            puts "blah blah pizza blah pizza!"
+        else 
+            puts "blase blase blah"
+    end
 
 
 end
 
 ilolo = Person.new("Ilolo", 25, 10, 10)
+jaevin = Person.new("Jaevin", 20, 5, 5)
 
-# def happiness 
-#  @happiness
-# end 
-
-
-# def hygiene
-#     @hygiene
-# end
-
-# def bank_account
-#     @bank_account
-# end
